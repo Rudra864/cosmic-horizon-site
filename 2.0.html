@@ -1,91 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Horizon Initiative</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Orbitron', sans-serif;
-            background: black;
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        header {
-            padding: 50px 20px;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        p.tagline {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-        }
-        section {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            color: #888;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cosmic Horizon Initiative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: black;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    header {
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    p.tagline {
+      font-size: 1.2rem;
+      color: #a0a0a0;
+    }
+    section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
 
-    <canvas id="stars"></canvas>
+<canvas id="galaxy"></canvas>
 
-    <header>
-        <h1>Cosmic Horizon Initiative</h1>
-        <p class="tagline">Exploring Beyond the Known Universe</p>
-    </header>
+<header>
+  <h1>Cosmic Horizon Initiative</h1>
+  <p class="tagline">Exploring Beyond the Known Universe</p>
+</header>
 
-    <section>
-        <h2>Our Mission</h2>
-        <p>At the Cosmic Horizon Initiative, we are dedicated to advancing humanity's knowledge of the universe. From deep-space exploration missions to cutting-edge astrophysics research, our goal is to push the boundaries of what is possible and inspire the next generation of explorers.</p>
-    </section>
+<section>
+  <h2>Our Mission</h2>
+  <p>At the Cosmic Horizon Initiative, we are dedicated to advancing humanity's knowledge of the universe. From deep-space exploration missions to cutting-edge astrophysics research, our goal is to push the boundaries of what is possible and inspire the next generation of explorers.</p>
+</section>
 
-    <section>
-        <h2>Programs & Projects</h2>
-        <p>We are currently engaged in projects like the Exoplanet Discovery Program, the Next-Gen Space Telescope development, and interstellar propulsion research.</p>
-    </section>
+<section>
+  <h2>Programs & Projects</h2>
+  <p>We are currently engaged in projects like the Exoplanet Discovery Program, the Next-Gen Space Telescope development, and interstellar propulsion research.</p>
+</section>
 
-    <section>
-        <h2>Recent Developments</h2>
-        <ul>
-            <li><strong>April 2025:</strong> Detection of 3 new Earth-like exoplanets using our Deep Space Observatory.</li>
-            <li><strong>March 2025:</strong> Breakthrough in plasma propulsion technology—enabling faster travel beyond our solar system.</li>
-            <li><strong>January 2025:</strong> Launch of the "Horizon Explorer" probe toward the Alpha Centauri system.</li>
-        </ul>
-    </section>
+<section>
+  <h2>Recent Developments</h2>
+  <ul>
+    <li><strong>April 2025:</strong> Detection of 3 new Earth-like exoplanets using our Deep Space Observatory.</li>
+    <li><strong>March 2025:</strong> Breakthrough in plasma propulsion technology—enabling faster travel beyond our solar system.</li>
+    <li><strong>January 2025:</strong> Launch of the "Horizon Explorer" probe toward the Alpha Centauri system.</li>
+  </ul>
+</section>
 
-    <footer>
-        &copy; 2025 Cosmic Horizon Initiative. All rights reserved.
-    </footer>
+<footer>
+  &copy; 2025 Cosmic Horizon Initiative. All rights reserved.
+</footer>
 
-    <script>
-        const canvas = document.getElementById('stars');
-        const ctx = canvas.getContext('2d');
+<script>
+  const canvas = document.getElementById('galaxy');
+  const ctx = canvas.getContext('2d');
 
-        let width, height;
-        let stars = [];
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
 
-        function init() {
-            width = window.innerWidth;
-            height = window.innerH
+  const stars = [];
+  const numStars = 1000;
+
+  let mouseX = width / 2;
+
